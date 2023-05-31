@@ -82,3 +82,9 @@ const Tile Tile::LU({
     1, 1, 0,
     0, 0, 0
 });
+
+const Tile Tile::CROSS({
+    0, 1, 0,
+    1, 1, 1,
+    0, 1, 0
+});

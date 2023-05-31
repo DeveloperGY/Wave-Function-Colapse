@@ -82,6 +82,10 @@ Tile Cell::get_tile()
         case Tiles::LU:
             tile = Tile::LU;
             break;
+        
+        case Tiles::CROSS:
+            tile = Tile::CROSS;
+            break;
     }
 
     return tile;
@@ -107,10 +111,11 @@ void Cell::reset()
     this->possibilites.push_back(Tiles::RD);
     this->possibilites.push_back(Tiles::DL);
     this->possibilites.push_back(Tiles::LU);
+    this->possibilites.push_back(Tiles::CROSS);
 
     this->collapsed = false;
 
-    this->value = NONE;
+    this->value = Tiles::NONE;
 
     return;
 }
@@ -148,6 +153,7 @@ void Cell::update(Tiles tile, Direction direction)
             new_possibilities.push_back(Tiles::VER);
             new_possibilities.push_back(Tiles::UR);
             new_possibilities.push_back(Tiles::LU);
+            new_possibilities.push_back(Tiles::CROSS);
         }
     }
     else if (direction == Direction::D_DOWN)
@@ -168,6 +174,7 @@ void Cell::update(Tiles tile, Direction direction)
             new_possibilities.push_back(Tiles::VER);
             new_possibilities.push_back(Tiles::RD);
             new_possibilities.push_back(Tiles::DL);
+            new_possibilities.push_back(Tiles::CROSS);
         }
     }
     else if (direction == Direction::D_LEFT)
@@ -188,6 +195,7 @@ void Cell::update(Tiles tile, Direction direction)
             new_possibilities.push_back(Tiles::HOR);
             new_possibilities.push_back(Tiles::DL);
             new_possibilities.push_back(Tiles::LU);
+            new_possibilities.push_back(Tiles::CROSS);
         }
     }
     else
@@ -208,6 +216,7 @@ void Cell::update(Tiles tile, Direction direction)
             new_possibilities.push_back(Tiles::HOR);
             new_possibilities.push_back(Tiles::UR);
             new_possibilities.push_back(Tiles::RD);
+            new_possibilities.push_back(Tiles::CROSS);
         }
     }
 

@@ -27,6 +27,7 @@ class Tile
         static const Tile RD;
         static const Tile DL;
         static const Tile LU;
+        static const Tile CROSS;
 };
 
 #endif

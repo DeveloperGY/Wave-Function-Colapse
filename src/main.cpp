@@ -5,8 +5,8 @@
 #include <iostream>
 #include <termDisplay.h>
 
-const int GRID_WIDTH  = 45; // max 159 (balance 45)
-const int GRID_HEIGHT = 27; // max 49 (balance 27)
+const int GRID_WIDTH  = 40; // max 159 (balance 45)
+const int GRID_HEIGHT = 14; // max 49 (balance 27)
 
 const int TILE_WIDTH  = 3;
 const int TILE_HEIGHT = 3;
@@ -21,20 +21,20 @@ int main(void)
     }
 
 
-
-    Grid<GRID_WIDTH, GRID_HEIGHT> grid;
-
-    while(!grid.is_solved())
+    while(1)
     {
-        grid.step();
-        // grid.generate();
+        Grid<GRID_WIDTH, GRID_HEIGHT> grid;
 
-        grid.print();
+        while(!grid.is_solved())
+        {
+            grid.step();
+            // grid.generate();
 
-        td_display();
+            grid.print();
+
+            td_display();
+        }
     }
-
-    getchar();
 
     td_terminate(1);
 

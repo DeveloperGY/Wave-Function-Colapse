@@ -20,6 +20,7 @@ enum Tiles
     RD,
     DL,
     LU,
+    CROSS,
     NONE
 };
 
